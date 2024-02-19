@@ -1,10 +1,10 @@
-import {Home as HomeIcon, Search, Library, ChevronLeft, ChevronRight, Play} from 'Lucide-react'
+import {Home as HomeIcon, Search, Library, ChevronLeft, ChevronRight, Play, Heart, Shuffle, SkipBack, SkipForward, Repeat, Bell} from 'Lucide-react'
 
 export default function Home() {
   return (
     <div className="h-screen flex flex-col ">
       <div className='flex flex-1'>
-        <aside className="w-72 bg-zinc-950 p-6">
+        <aside className="w-72 bg-zinc-950 p-6 border-r border-black">
           <div className="flex items-center gap-2 group">
               <a className="w-3 h-3 bg-red-500 rounded-full group-hover:bg-red-600"></a>
               <a className="w-3 h-3 bg-yellow-500 rounded-full group-hover:bg-yellow-600"></a>
@@ -12,8 +12,7 @@ export default function Home() {
           </div>
 
           <div className="mt-6 ml-2 mr-7 m-w-[10]"><img src="https://storage.googleapis.com/pr-newsroom-wp/1/2018/11/Spotify_Logo_RGB_Green.png" alt="lgo" /></div>
-         
-          
+        
           <nav className="space-y-5 mt-8">
             <a href="" className='flex items-center gap-4 text-xm font-semibold text-zinc-200'><HomeIcon />Home</a>
             <a href="" className='flex items-center gap-4 text-xm font-semibold text-zinc-200'><Search />Search</a>
@@ -34,13 +33,19 @@ export default function Home() {
             
           </nav>
         </aside>
-        <main className="flex-1 p-6">
+        <main className="flex-1 p-6 border-inherit-black">
           <div className="flex items-center gap-4">
             <button className=" rounded-full bg-black/20 p-1"><ChevronLeft/></button>
             <button className=" rounded-full bg-black/20 p-1"><ChevronRight/></button>
+            
+            <div className="ml-auto gap-5 flex mr-5 pt-3">
+              <Bell className="w-10 h-7 "/>
+              <h1 className="w-8 h-8"><img className="rounded-full" src="/eu.jpg" alt="img" /></h1>
+            </div>
           </div>
 
-          <h1 className="text-semibold text-3xl mt-10 ">Good Afternoon</h1>
+
+          <h1 className="text-semibold text-3xl mt-10 font-sans	">Good Afternoon</h1>
 
           <div className="grid grid-cols-3 gap-4 mt-6">
             <a href='' className='bg-white/10 group rounded-lg overflow-hidden flex items-center gap-4 hover:bg-white/20 transition-colors'>
@@ -76,7 +81,7 @@ export default function Home() {
             
           </div>
 
-          <h2 className="text-semibold text-2xl mt-10 ">Made for Pedro</h2>
+          <h2 className="text-semibold text-2xl mt-10 font-sans">Made for Pedro</h2>
 
           <div className="grid grid-cols-7 gap-4 mt-6">
             <a href='#' className="bg-white/5 p-3 rounded-xl group flex flex-col gap-2 hover:bg-white/10">
@@ -119,9 +124,36 @@ export default function Home() {
         </main>
       </div>
 
-      <footer className="bg-zinc-800 h-[110px] border-t border-zinc-700 p-6"> 
-        footer
-      </footer>
+      <footer className="bg-zinc-950 border-t border-zinc-700 p-7 flex items-center justify-between"> 
+        <div className="flex items-center">
+          <img width={65} height={65} src="/Fred-Again..-Actual-Life-3.jpeg" alt="capa" />    
+            <div className="flex flex-col">
+              <a href="#"><strong className="ml-5 font-normal group hover:underline">Music Name</strong></a>
+              <a href="#"><span className="ml-5 text-sm text-zinc-300 group hover:underline">Artist Name</span></a>
+            </div>
+              <div className='m-5 group hover:text-red-500'><a href="#"><Heart/></a></div>
+        </div>
+              
+        <div className="flex flex-col items-center">          
+          <div className="flex items-center gap-6">
+            <Shuffle size={35}/>
+            <SkipBack size={35}/>
+            <button className="w-10 h-10 flex items-center justify-center pl-1 rounded-full text-xs bg-white text-black ml-auto "><Play/></button>
+            <SkipForward size={35}/>
+            <Repeat size={35}/>
+          </div>
+
+          <div className="flex items-center pt-5 gap-5 ">
+            <span className="text-xs">0:00</span>
+            <div className="h-2 rounded-full w-[600px] bg-zinc-300"></div>
+            <span className="text-xs">3:30</span>            
+          </div>
+        </div>
+        
+        <div className="pt-4">
+
+        </div>
+      </footer> 
     </div>
   );
 }
